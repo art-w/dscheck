@@ -409,8 +409,7 @@ let trace func =
   with exn ->
     Format.printf "Found error at run %d:@." !num_runs;
     print_trace () ;
-    Format.printf "Unhandled exception: %s@." (Printexc.to_string exn) ;
-    Printexc.print_backtrace stdout
+    raise exn
 
 let trace func =
   Fun.protect
