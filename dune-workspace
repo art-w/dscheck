@@ -1,0 +1,4 @@
+(lang dune 2.9)
+
+(context default)
+(context (default (name dscheck) (instrument_with dscheck)))

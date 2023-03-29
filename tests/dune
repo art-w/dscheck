@@ -1,14 +1,20 @@
 (test
  (name test_list)
  (libraries dscheck alcotest)
- (modules test_list))
+ (modules test_list)
+ (enabled_if
+  (<> %{context_name} "dscheck")))
 
 (test
  (name test_naive_counter)
  (libraries dscheck alcotest)
- (modules test_naive_counter))
+ (modules test_naive_counter)
+ (enabled_if
+  (<> %{context_name} "dscheck")))
 
 (test
  (name test_michael_scott_queue)
  (libraries dscheck alcotest)
- (modules test_michael_scott_queue michael_scott_queue))
+ (modules test_michael_scott_queue michael_scott_queue)
+ (enabled_if
+  (<> %{context_name} "dscheck")))

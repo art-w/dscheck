@@ -1,3 +1,5 @@
 (library
  (public_name dscheck)
- (libraries containers oseq))
+ (libraries containers oseq)
+ (instrumentation.backend
+  (ppx dscheck_ppx)))

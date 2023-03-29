@@ -1,0 +1,7 @@
+(library
+ (name dscheck_ppx)
+ (kind ppx_rewriter)
+ (libraries ppxlib)
+ (preprocess
+  (pps ppxlib.metaquot))
+ (ppx_runtime_libraries dscheck))

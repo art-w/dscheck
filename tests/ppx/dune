@@ -1,0 +1,27 @@
+(library
+ (name lib)
+ (modules lib)
+ (instrumentation
+  (backend dscheck)))
+
+(library
+ (name lib_dscheck)
+ (modules)
+ (libraries
+  (re_export lib))
+ (instrumentation
+  (backend dscheck))
+ (enabled_if
+  (= %{context_name} "dscheck")))
+
+(test
+ (name test)
+ (modules test)
+ (libraries lib_dscheck dscheck alcotest)
+ (enabled_if
+  (= %{context_name} "dscheck")))
+
+(executable
+ (name exe)
+ (modules exe)
+ (libraries lib))
